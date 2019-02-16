@@ -98,6 +98,7 @@
 		4E5D47D121E114FA00954A5E /* iOSSP008 */ = {
 			isa = PBXGroup;
 			children = (
+				B0A6861A22183EC100891CF8 /* swift */,
 				4EB2751D21E7C2A50001F037 /* iOSSP008.entitlements */,
 				4E5D47EB21E1317300954A5E /* GoogleService-Info.plist */,
 				4E5D47D221E114FA00954A5E /* AppDelegate.h */,
@@ -119,6 +120,13 @@
 				4EB2751721E65C430001F037 /* Info.plist */,
 			);
 			path = iOSSP008Tests;
+			sourceTree = "<group>";
+		};
+		B0A6861A22183EC100891CF8 /* swift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = swift;
 			sourceTree = "<group>";
 		};
 		C97D478D03E6A4A481DEC4BC /* Frameworks */ = {

@@ -14,6 +14,7 @@
 		4E5D47E221E114FC00954A5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5D47E121E114FC00954A5E /* main.m */; };
 		4E5D47EC21E1317300954A5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E5D47EB21E1317300954A5E /* GoogleService-Info.plist */; };
 		4EB2751621E65C430001F037 /* iOSSP008Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB2751521E65C430001F037 /* iOSSP008Tests.m */; };
+		B0A686282218554E00891CF8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A686272218554E00891CF8 /* Utils.swift */; };
 		B3186B609BF9658C2783F4B6 /* libPods-iOSSP008.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49449544398079A3EC7ACF8A /* libPods-iOSSP008.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		4EB2751521E65C430001F037 /* iOSSP008Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSSP008Tests.m; sourceTree = "<group>"; };
 		4EB2751721E65C430001F037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EB2751D21E7C2A50001F037 /* iOSSP008.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSSP008.entitlements; sourceTree = "<group>"; };
+		B0A686262218554D00891CF8 /* iOSSP008-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSSP008-Bridging-Header.h"; sourceTree = "<group>"; };
+		B0A686272218554E00891CF8 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		E7EAEF9F46E9EE024BC66CC7 /* Pods-iOSSP008.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSSP008.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSSP008/Pods-iOSSP008.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +128,8 @@
 		B0A6861A22183EC100891CF8 /* swift */ = {
 			isa = PBXGroup;
 			children = (
+				B0A686272218554E00891CF8 /* Utils.swift */,
+				B0A686262218554D00891CF8 /* iOSSP008-Bridging-Header.h */,
 			);
 			path = swift;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				TargetAttributes = {
 					4E5D47CE21E114FA00954A5E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.SafariKeychain = {
 								enabled = 1;
@@ -290,6 +296,7 @@
 				4E5D47D721E114FA00954A5E /* ViewController.m in Sources */,
 				4E5D47E221E114FC00954A5E /* main.m in Sources */,
 				4E5D47D421E114FA00954A5E /* AppDelegate.m in Sources */,
+				B0A686282218554E00891CF8 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +447,7 @@
 			baseConfigurationReference = E7EAEF9F46E9EE024BC66CC7 /* Pods-iOSSP008.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iOSSP008/iOSSP008.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -452,6 +460,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = faith.changliu.iOSSP008;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSSP008/swift/iOSSP008-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -461,6 +472,7 @@
 			baseConfigurationReference = 2DC2F8F94BE2F7A2CC887BF0 /* Pods-iOSSP008.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iOSSP008/iOSSP008.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8M4S86FE42;
@@ -472,6 +484,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = faith.changliu.iOSSP008;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSSP008/swift/iOSSP008-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -479,6 +493,7 @@
 		4EB2751A21E65C430001F037 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = iOSSP008Tests/Info.plist;
@@ -497,6 +512,7 @@
 		4EB2751B21E65C430001F037 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = iOSSP008Tests/Info.plist;

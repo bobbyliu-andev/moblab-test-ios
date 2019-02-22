@@ -3,6 +3,7 @@
 
 @interface ViewController ()
 @property UILabel* label;
+@property UITextView* tv;
 @end
 
 @implementation ViewController
@@ -27,8 +28,25 @@
     [[_label.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor]setActive:YES];
     [[_label.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor]setActive:YES];
     _label.text = _data;
+    
+    CGFloat navHeight = ([UIApplication sharedApplication].statusBarFrame.size.height +
+                         (self.navigationController.navigationBar.frame.size.height ?: 0.0));
+    NSLog(@"Nav Height: %f", navHeight);
+    
+    _tv = UITextView.new;
+    _tv.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:_tv];
+    [[_tv.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:navHeight]setActive:YES];
+    [[_tv.widthAnchor constraintEqualToAnchor:self.view.widthAnchor constant:0]setActive:YES];
+    [[_tv.heightAnchor constraintEqualToConstant:120]setActive:YES];
+    _tv.backgroundColor = UIColor.blueColor;
+    
+    
 }
 
+-(void)dismissKeyboard {
+    [_tv resignFirstResponder];
+}
 
 - (IBAction)crashButtonTapped:(id)sender {
     NSLog(@"Button clicked");

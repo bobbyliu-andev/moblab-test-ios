@@ -1,9 +1,12 @@
-//
-//  Utils.swift
-//  iOSSP008
-//
-//  Created by Chang Liu on 2/16/19.
-//  Copyright © 2019 Chang. All rights reserved.
-//
-
 import Foundation
+
+public class Utils: NSObject {
+    var myName = "Chang Liu"
+    public override init() {
+        super.init()
+        print("Utils initializing...")
+    }
+    @objc public func printMyName() {
+        print("My name is \(myName)")
+    }
+}

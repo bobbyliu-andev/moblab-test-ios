@@ -1,5 +1,6 @@
 #import "ViewController.h"
 #import <Crashlytics/Crashlytics.h>
+#import <iOSSP008-Swift.h>
 
 @interface ViewController ()
 @property UILabel* label;
@@ -41,7 +42,7 @@
     [[_tv.heightAnchor constraintEqualToConstant:120]setActive:YES];
     _tv.backgroundColor = UIColor.blueColor;
     
-    
+    [self testSwift];
 }
 
 -(void)dismissKeyboard {
@@ -55,6 +56,11 @@
 - (void)updateData {
     NSLog(@"Data updating...%@", _data);
     _label.text = _data;
+}
+
+- (void)testSwift {
+    Utils* utils = Utils.new;
+    [utils printMyName];
 }
 
 @end
